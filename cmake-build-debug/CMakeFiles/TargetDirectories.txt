@@ -1,0 +1,3 @@
+/media/sniffer/Data/CLion_Projects/Kafka_C_Backend/cmake-build-debug/CMakeFiles/Kafka_C_Backend.dir
+/media/sniffer/Data/CLion_Projects/Kafka_C_Backend/cmake-build-debug/CMakeFiles/edit_cache.dir
+/media/sniffer/Data/CLion_Projects/Kafka_C_Backend/cmake-build-debug/CMakeFiles/rebuild_cache.dir
