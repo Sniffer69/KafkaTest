@@ -32,6 +32,7 @@ char* url_encode(const char* str) {
 //main function
 
 int main(){
+
     CURL *curl;
     CURLcode res;
     char url[1000];
@@ -41,18 +42,18 @@ int main(){
     input[strcspn(input, "\n")] = '\0'; // remove newline character if present
 
     char* output = url_encode(input);
-    printf("URL encoded string: %s\n", output);
+//   printf("URL encoded string: %s\n", output);
 
 
 // Full url to post data
-    sprintf(url, "http://localhost:8080/kafka/api/producer?message=%s", output);
+    sprintf(url, "http://localhost:8080/api/kafka/publish?message=%s", output);
     printf("%s\n",url);
 
 // Hit the url
     curl = curl_easy_init();
     if(curl) {
         curl_easy_setopt(curl, CURLOPT_URL, url);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, url);
+        curl_easy_setopt(curl, CURLOPT_HTTPGET, url);
         res = curl_easy_perform(curl);
         if(res != CURLE_OK)
             fprintf(stderr, "curl_easy_perform() failed: %s\n",
@@ -61,4 +62,9 @@ int main(){
         free(output);
     }
     return 0;
+
+
+
+     
+
 }
